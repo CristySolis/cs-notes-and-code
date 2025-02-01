@@ -1,0 +1,31 @@
+name: Python
+
+on:
+  pull_request:
+  push:
+    tags:
+      - "*"
+    branches:
+      - main
+jobs:
+  linting:
+    runs-on: ubuntu-latest
+    container:
+      image: python:3.12.5-slim
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install dependencies
+        run: |
+          pip install poetry
+          poetry install
+      - uses: actions/cache/save@v4
+        if: ${{ (github.ref == 'refs/heads/main') && (steps.cache-restore.outputs.cache-hit != 'true') }}
+        with:
+          path: |
+            ~/.cache/pypoetry
+            .mypy_cache
+          key: cache-${{ hashFiles('poetry.lock') }}
+      - run: poetry check
+      - run: poetry run isort --check .
+      - run: poetry run mypy
+      - run: poetry run ruff check .
