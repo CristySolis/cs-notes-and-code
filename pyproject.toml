@@ -1,0 +1,90 @@
+[project]
+name = "cs-notes-and-code"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "CristySolis",email = "mcristy.gsolis@gmail.com"}
+]
+readme = "README.md"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.dependencies]
+python = "3.12.5"
+pytest = "8.3.4"
+
+[tool.poetry.group.dev.dependencies]
+mypy = "1.14.1"
+ruff = "0.9.4"
+isort = "6.0.0"
+
+[tool.mypy]
+check_untyped_defs = true
+disallow_any_generics = true
+disallow_incomplete_defs = true
+disallow_subclassing_any = true
+disallow_untyped_calls = true
+disallow_untyped_decorators = true
+disallow_untyped_defs = true
+extra_checks = true
+ignore_missing_imports = true
+local_partial_types = true
+no_implicit_optional = true
+no_implicit_reexport = true
+packages = ["cs_notes_and_code"]
+
+[tool.ruff]
+line-length = 88
+
+[tool.ruff.lint]
+ignore = ["TRY003", "COM812", "S101", "E501", "ISC001"]
+select = [
+  "A",
+  "ANN",
+  "ARG",
+  "B",
+  "BLE",
+  "C4",
+  "C90",
+  "COM",
+  "DTZ",
+  "E",
+  "ERA",
+  "EXE",
+  "F",
+  "FA",
+  "FBT",
+  "FLY",
+  "FURB",
+  "G",
+  "I",
+  "ICN",
+  "INP",
+  "ISC",
+  "LOG",
+  "N",
+  "PGH",
+  "PIE",
+  "PL",
+  "PTH",
+  "Q",
+  "RET",
+  "RSE",
+  "RUF",
+  "S",
+  "SIM",
+  "SLF",
+  "SLOT",
+  "T20",
+  "TID",
+  "TRY",
+  "UP",
+  "W",
+  "YTT"
+]
+[tool.pytest.ini_options]
+testpaths = [
+  "tests"
+]
