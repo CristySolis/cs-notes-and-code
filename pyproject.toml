@@ -13,6 +13,7 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.dependencies]
 python = "3.12.5"
+pytest = "8.3.4"
 
 [tool.poetry.group.dev.dependencies]
 mypy = "1.14.1"
@@ -82,4 +83,8 @@ select = [
   "UP",
   "W",
   "YTT"
+]
+[tool.pytest.ini_options]
+testpaths = [
+  "tests"
 ]
