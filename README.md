@@ -6,6 +6,7 @@ Practical exercises and structured notes covering computer science topics.
 
 ```
 brew install pre-commit poetry
+poetry self add poetry-plugin-shell
 poetry sync
 poetry shell
 ```
