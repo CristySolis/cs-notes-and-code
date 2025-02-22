@@ -32,7 +32,7 @@ packages = ["cs_notes_and_code"]
 
 [tool.poetry.dependencies]
 pytest = "8.3.4"
-python = "3.12.5"
+python = "3.12.6"
 typer-slim = "0.12.5"
 
 [tool.poetry.group.dev.dependencies]
