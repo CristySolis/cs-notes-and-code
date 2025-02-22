@@ -12,6 +12,9 @@ name = "cs-notes-and-code"
 readme = "README.md"
 version = "0.1.0"
 
+[tool.isort]
+profile = "black"
+
 [tool.mypy]
 check_untyped_defs = true
 disallow_any_generics = true
@@ -33,6 +36,7 @@ python = "3.12.5"
 typer-slim = "0.12.5"
 
 [tool.poetry.group.dev.dependencies]
+black = "^25.1.0"
 isort = "6.0.0"
 mypy = "1.14.1"
 ruff = "0.9.4"
