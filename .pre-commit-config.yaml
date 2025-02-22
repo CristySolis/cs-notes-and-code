@@ -63,7 +63,8 @@ repos:
         entry: poetry run black
         language: system
         types: [python]
-  - repo: https://github.com/seddonym/import-linter
-    rev: v2.0
-    hooks:
-      - id: import-linter
+  #   FIXME: import-linter does not properly work with python 3.12
+  # - repo: https://github.com/seddonym/import-linter
+  #   rev: v2.0
+  #   hooks:
+  #     - id: import-linter
