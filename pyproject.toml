@@ -1,24 +1,19 @@
-[project]
-name = "cs-notes-and-code"
-version = "0.1.0"
-description = ""
-authors = [
-    {name = "CristySolis",email = "mcristy.gsolis@gmail.com"}
-]
-readme = "README.md"
-
 [build-system]
-requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
+requires = ["poetry-core>=2.0.0,<3.0.0"]
 
-[tool.poetry.dependencies]
-python = "3.12.5"
-pytest = "8.3.4"
+[project]
+authors = [
+  {name = "CristySolis", email = "mcristy.gsolis@gmail.com"}
+]
+description = ""
+dynamic = ["dependencies", "requires-python"]
+name = "cs-notes-and-code"
+readme = "README.md"
+version = "0.1.0"
 
-[tool.poetry.group.dev.dependencies]
-mypy = "1.14.1"
-ruff = "0.9.4"
-isort = "6.0.0"
+[tool.isort]
+profile = "black"
 
 [tool.mypy]
 check_untyped_defs = true
@@ -34,6 +29,23 @@ local_partial_types = true
 no_implicit_optional = true
 no_implicit_reexport = true
 packages = ["cs_notes_and_code"]
+
+[tool.poetry.dependencies]
+numpy = "2.2.3"
+pytest = "8.3.4"
+python = "3.12.6"
+typer-slim = "0.12.5"
+
+[tool.poetry.group.dev.dependencies]
+black = "^25.1.0"
+isort = "6.0.0"
+mypy = "1.14.1"
+ruff = "0.9.4"
+
+[tool.pytest.ini_options]
+testpaths = [
+  "tests"
+]
 
 [tool.ruff]
 line-length = 88
@@ -83,8 +95,4 @@ select = [
   "UP",
   "W",
   "YTT"
-]
-[tool.pytest.ini_options]
-testpaths = [
-  "tests"
 ]
